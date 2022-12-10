@@ -16,5 +16,5 @@ cp -pv ${build_pkg} scripts/runtime/
 
 ${docker_cmd} build                 \
     --target runtime                \
-    --tag ${package_name}-runtime   \
+    --tag ${package_name}           \
     .
