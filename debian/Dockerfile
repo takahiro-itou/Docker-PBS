@@ -17,7 +17,7 @@ ARG BASE_IMAGE_TAG='11.4-slim'
 ##########################################################################
 
 # Pull Base Image.
-FROM ubuntu:${BASE_IMAGE_TAG} AS basepkg
+FROM debian:${BASE_IMAGE_TAG} AS basepkg
 
 RUN :  \
     ; apt-get  update   \
