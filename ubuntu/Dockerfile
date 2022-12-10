@@ -29,8 +29,7 @@ RUN :  \
         emacs  \
         expat  \
         git  \
-        libcgroup  \
-        libcgroup-tools  \
+        cgroup-tools  \
         libedit2  \
         libical3  \
         make  \
@@ -41,7 +40,7 @@ RUN :  \
         tcl  \
         time  \
         tk  \
-        vi  \
+        vim  \
     ;
 
 ##########################################################################
