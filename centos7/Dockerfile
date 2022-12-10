@@ -106,11 +106,15 @@ RUN :  \
         sendmail  \
     ;
 
+ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]
+CMD [ "bash" ]
+
 WORKDIR /work/build-pbs
 
-ENTRYPOINT [ "/bin/bash" ]
-
+COPY ./entrypoints /
 COPY ./scripts/runtime /work/build-pbs
 COPY ./build /work/build-pbs
 
 RUN /bin/bash -xue ./INSTALL.sh
+
+WORKDIR /
