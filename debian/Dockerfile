@@ -28,6 +28,7 @@ RUN :  \
         git  \
         cgroup-tools  \
         libedit2  \
+        libical2a  \
         libical3  \
         make  \
         postgresql-contrib  \
@@ -80,4 +81,34 @@ RUN :  \
 WORKDIR /work/build-pbs
 
 ENTRYPOINT [ "/bin/bash" ]
+CMD [ "./BUILD.sh" ]
 
+COPY ./scripts/build /work/build-pbs
+
+##########################################################################
+##
+##    The 3rd Stage.
+##
+##    Install PBS From Built Package.
+##
+##########################################################################
+
+#FROM basepkg AS runtime
+FROM builder AS runtime
+
+RUN :  \
+    ; mkdir -p /work/build-pbs  \
+    ; apt-get  install  \
+        --no-install-recommends  --yes  \
+        bzip2  \
+        postgresql  \
+        sendmail-bin  \
+    ;
+
+WORKDIR /work/build-pbs
+
+ENTRYPOINT [ "/bin/bash" ]
+
+COPY ./scripts/runtime /work/build-pbs
+
+RUN /bin/bash -xue ./INSTALL.sh
