@@ -24,7 +24,8 @@ ARG BASE_IMAGE_TAG='jammy'
 FROM ubuntu:${BASE_IMAGE_TAG} AS basepkg
 
 RUN :  \
-    ; apt-get install  \
+    ; apt-get  update  \
+    ; apt-get  install  \
         emacs  \
         expat  \
         git  \
@@ -77,6 +78,7 @@ RUN :  \
         swig  \
         tcl-dev  \
         tk-dev  \
+    ;
 
 WORKDIR /work/build-pbs
 
