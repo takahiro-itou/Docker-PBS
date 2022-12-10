@@ -25,7 +25,7 @@ FROM ubuntu:${BASE_IMAGE_TAG} AS basepkg
 
 RUN :  \
     ; apt-get  update  \
-    ; apt-get  install  \
+    ; apt-get  install --yes  \
         emacs  \
         expat  \
         git  \
@@ -34,7 +34,7 @@ RUN :  \
         libical3  \
         make  \
         postgresql-contrib  \
-        python  \
+        python2  \
         python3  \
         sudo  \
         tcl  \
@@ -55,7 +55,7 @@ FROM basepkg AS builder
 
 RUN :  \
     ; mkdir -p /work/build-pbs  \
-    ; apt-get install  \
+    ; apt-get install  --yes  \
         autoconf  \
         automake  \
         gcc  \
