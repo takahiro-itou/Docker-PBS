@@ -12,6 +12,9 @@ volume_mount=${VOLUME_MOUNT:-'/tmp/pbspro'}
 volume_hostdir=${VOLUME_HOSTDIR:-"${volume_host_def}"}
 volume_option="${volume_hostdir}:${volume_mount}"
 
+mkdir -p entrypoints
+cp -pv ../common/scripts/runtime/* entrypoints/
+
 ${docker_cmd} build                 \
     --target runtime                \
     --tag ${package_name}           \
