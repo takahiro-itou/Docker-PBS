@@ -1,5 +1,13 @@
 
+##########################################################################
+##
+##    Arguments.
+##
+##########################################################################
+
+##  Select Image Tag.
 ARG BASE_IMAGE_TAG='7'
+
 
 ##########################################################################
 ##
@@ -31,6 +39,7 @@ RUN :  \
         tk  \
         vi  \
     ;
+
 
 ##########################################################################
 ##
@@ -72,10 +81,11 @@ RUN :  \
 
 WORKDIR /work/build-pbs
 
-COPY ./scripts/build /work/build-pbs
-
 ENTRYPOINT [ "/bin/bash" ]
 CMD [ "./BUILD.sh" ]
+
+COPY ./scripts/build /work/build-pbs
+
 
 ##########################################################################
 ##
@@ -98,8 +108,9 @@ RUN :  \
 
 WORKDIR /work/build-pbs
 
+ENTRYPOINT [ "/bin/bash" ]
+
 COPY ./scripts/runtime /work/build-pbs
+COPY ./build /work/build-pbs
 
 RUN /bin/bash -xue ./INSTALL.sh
-
-ENTRYPOINT [ "/bin/bash" ]

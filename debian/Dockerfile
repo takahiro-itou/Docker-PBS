@@ -8,6 +8,7 @@
 ##  Select Image Tag.
 ARG BASE_IMAGE_TAG='11.4-slim'
 
+
 ##########################################################################
 ##
 ##    The 1st Stage.
@@ -39,6 +40,7 @@ RUN :  \
         tk  \
         vim  \
     ;
+
 
 ##########################################################################
 ##
@@ -84,6 +86,7 @@ CMD [ "./BUILD.sh" ]
 
 COPY ./scripts/build /work/build-pbs
 
+
 ##########################################################################
 ##
 ##    The 3rd Stage.
@@ -109,5 +112,6 @@ WORKDIR /work/build-pbs
 ENTRYPOINT [ "/bin/bash" ]
 
 COPY ./scripts/runtime /work/build-pbs
+COPY ./build /work/build-pbs
 
 RUN /bin/bash -xue ./INSTALL.sh
