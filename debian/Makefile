@@ -1,8 +1,8 @@
 
 USER_NAME     =  takahiroitou
-PROJECT_NAME  =  pbspro-ubuntu
+PROJECT_NAME  =  pbspro-debian
 PACKAGE_NAME  =  ${USER_NAME}/${PROJECT_NAME}
-PACKAGE_TAG   =  jammy
+PACKAGE_TAG   =  11.4-slim
 
 DOCKER_CMD    =  docker
 
