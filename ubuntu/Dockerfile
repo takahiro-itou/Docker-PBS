@@ -24,8 +24,9 @@ ARG BASE_IMAGE_TAG='jammy'
 FROM ubuntu:${BASE_IMAGE_TAG} AS basepkg
 
 RUN :  \
-    ; apt-get  update  \
-    ; apt-get  install --yes  \
+    ; apt-get  update   \
+    ; apt-get  install  \
+        --no-install-recommends  --yes  \
         emacs  \
         expat  \
         git  \
@@ -55,7 +56,8 @@ FROM basepkg AS builder
 
 RUN :  \
     ; mkdir -p /work/build-pbs  \
-    ; apt-get install  --yes  \
+    ; apt-get  install  \
+        --no-install-recommends  --yes  \
         autoconf  \
         automake  \
         gcc  \
