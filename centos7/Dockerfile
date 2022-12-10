@@ -49,7 +49,7 @@ RUN :  \
         automake  \
         expat-devel  \
         gcc  \
-        gcc-c+;
+        gcc-c++  \
         hwloc-devel  \
         libedit-devel  \
         libical-devel  \

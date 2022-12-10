@@ -28,7 +28,6 @@ RUN :  \
         git  \
         cgroup-tools  \
         libedit2  \
-        libical2a  \
         libical3  \
         make  \
         postgresql-contrib  \
