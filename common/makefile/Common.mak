@@ -8,7 +8,7 @@
 COMMON_DIR    ?=  ../common
 DEPS          ?=  .deps
 SOURCE_DIR    ?=  .
-TARGET_PKGS   ?=  data/build/pbspro.build.tar.bz2
+TARGET_PKGS   ?=  ./build/pbspro.build.tar.bz2
 
 CHKIMG        :=  ${COMMON_DIR}/chkimg
 COMPILE_PBS   :=  ${COMMON_DIR}/run-compile.sh

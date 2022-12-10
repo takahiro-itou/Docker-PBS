@@ -7,7 +7,7 @@ if [[ $# -ge 1 ]] ; then
     output_file=$1
     shift  1
 else
-    output_file='./data/pbspro.build.tar.bz2'
+    output_file='./build/pbspro.build.tar.bz2'
 fi
 
 docker_cmd='docker'

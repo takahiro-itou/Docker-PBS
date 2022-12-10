@@ -3,7 +3,7 @@
 package_name=$1
 shift  1
 
-build_pkg='./data/build/pbspro.build.tar.bz2'
+build_pkg='./build/pbspro.build.tar.bz2'
 
 docker_cmd='docker'
 
