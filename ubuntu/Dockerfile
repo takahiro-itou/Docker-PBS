@@ -64,7 +64,7 @@ RUN :  \
         g++  \
         libedit-dev  \
         libexpat-dev  \
-        libhwlog-dev  \
+        libhwloc-dev  \
         libical-dev  \
         libssl-dev  \
         libx11-dev  \
